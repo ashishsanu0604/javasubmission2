@@ -1,0 +1,156 @@
+// for immutable class Person
+public final class Person{
+	final String name;
+	final LocalDate dob;
+	final List<String> hobbies;
+	private Person(String nm,LocalDate date,List<String> hb){
+		this.name=nm;
+		this.dob=date;
+		this.hobbies=hb;
+	}
+	public String getName(){
+		return this.name;
+	}
+	public LocalDate getDob(){
+		return this.dob;
+	}
+	public List<String> getHoobies(){
+		return this.hobbies;
+	}
+	//Factory class for creating instances of Person
+	public static Person createPerson(String nm,LocalDate date,List<String> hb)
+	{
+		return new Person(nm,date,hb);
+	}
+}
+//if Person instances are immutable
+then possibly 
+final Person p1=new Person(name,dob,Hobbies);
+//2
+//Assuming string read as each row of csv //Scanner sc=new Scaneer(System.in);
+/*String s=sc.nextLine();
+
+String[] arr=s.split(",");
+String name=arr[0],address=name[3];
+Integer age=Integer.parseInt(arr[1]),salary=Integer.parseInt(arr[2]);*/
+
+//line -> is first row of csv
+public class filteravg{
+
+public static void main(){
+String name="",address="";
+Integer age=0,salary=0;
+line.stream()
+.map(data->{
+	String[] arr=data.split(",").filter(s->
+	{
+		Integer age1=Integer.parseInt(s[1]);
+		return age1>21 && age1<31;
+	})
+}).map(
+s->{Integer.parseInt(s);}
+).average().forEach(s->System.out.println(s));
+}
+
+}
+//3
+class Employee{
+	String name;
+	String address;
+	Integer age;
+	Integer salary;
+	Integer dept_id;
+	Integer Experience;
+	public String getName(){
+		return this.name;
+	}
+	public Integer getdeptId(){
+		return this.dept_id;
+	}
+	public Integer getExp(){
+		return this.Experience;
+	}
+}
+class Department{
+	String dname;
+	Integer id;
+	List<Employee> emplist;
+}
+public class Exer{
+	public static void main(){
+		List<Employees> l=new ArrayList<>();
+		Employee e1=new Employee("xyz","bcdhs",23,2513,1,10);
+		Employee e2=new Employee("abc","ndsbmn",24,2673,1,5);
+		Employee e3=new Employee("xyzs","hs",26,2913,1,8);
+		Employee e4=new Employee("abc","ndsbmn",24,2873,2,6);
+		Employee e5=new Employee("vwy","dlks",23,9220,2,4);
+		Employee e6=new Employee("typ","nwqask",24,9010,2,1);
+		l.add(e1);l.add(e2);l.add(e3);
+		l.add(e4);l.add(e5);l.add(e6);
+		List<Employees> l1=l.stream().sort(Comparator.getdeptId())
+		.sorted((em1,em2)->{
+			return Integer.compare(em2.getExp(),em1.getExp())
+		}).sort(Comparator.getName());
+	    
+	}
+}
+//4
+List<Integer> l1=Arrays.asList(10,10,20,20,20,30,40,50,60,60);
+List<Integer> l2=l1.stream().distinct().collect(Collectors.toList());
+
+//5
+class Account{
+	Integer accid;
+	Integer balance;
+	public Integer getaccId(){
+		return this.accid;
+	}
+	public Integer getbal(){
+		return this.balance;
+	}
+	Account(Integer id,Integer bal)
+	{
+		this.accid=id;
+		this.balance=bal;
+	}
+}
+class User{
+	Integer uid;
+	String name;
+	final Set<Accounts> acc;
+	public String getName(){
+		return this.name;
+	}
+	public Integer getuId(){
+		return this.uid;
+	}
+	public Set<Accounts> getAccounts(){
+		return this.acc;
+	}
+	User(String nm,Integer id,List<Accounts> accounts)
+	{
+		this.name=nm;
+		this.uid=id;
+		this.acc=accounts;
+	}
+	// public static User createUser(String nm,Integ id,List<Accounts> accounts)
+	// {
+	// 	return new User(nm,id,accounts);
+	// }
+
+}
+public class Sol{
+	public static void main(){
+		Account ac1=new Account(12,10000);
+		Account ac2=new Account(12,40000);
+		Account ac3=new Account(14,60000);
+		Account ac4=new Account(14,23000);
+		List<Account> l=new ArrayList<>(),l1=new ArrayList<>();
+		l.add(ac1);l.add(ac2);
+		l1.add(ac3);l1.add(ac4);
+		User u1=new User("xyz",12,l);
+		User u2=new User("abc",14,l1);
+		List<Account> ln=u1.getAccounts();
+		List<Account> sortedl=ln.stream().sort(Comparator.getaccId()).sort(Comparator.getbal());
+	}
+}
